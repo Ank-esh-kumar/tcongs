@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { X, Loader2 } from 'lucide-react';
-import { Button } from './Button';
+
 
 const schema = z.object({
   name: z.string().min(2, 'Required'),

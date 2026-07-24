@@ -1,15 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Monitor, Hexagon, Headphones, Leaf } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { fadeUp, staggerContainer } from '../../lib/animations';
-
-const trustIcons = [
-  { icon: Monitor, color: 'var(--color-blue)' },
-  { icon: Hexagon, color: 'var(--color-accent)' },
-  { icon: Headphones, color: 'var(--color-lime)' },
-  { icon: Leaf, color: 'var(--color-gold)' },
-];
 
 function Particles() {
   return (
