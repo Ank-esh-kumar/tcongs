@@ -1,19 +1,30 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
 
 /* ========================================
    DESIGN TOKENS — TCongs Infotech
    ======================================== */
 
 @theme {
-  /* Colors */
+  /* Logo Colors */
+  --color-accent: #E51A4B;       /* Red/Pink from logo */
+  --color-blue: #026AA7;         /* Blue from TCONGS text */
+  --color-gold: #FACC15;         /* Yellow/Gold from INFOTECH text */
+  --color-lime: #A3E635;         /* Lime from top triangle */
+  --color-gray-triangle: #9CA3AF;/* Gray from side triangle */
+
+  /* Theme Background & UI */
   --color-bg-primary: #090909;
   --color-bg-secondary: #111111;
   --color-bg-card: #151515;
-  --color-accent: #FF1F5A;
-  --color-accent-hover: #e6184f;
-  --color-accent-glow: rgba(255, 31, 90, 0.15);
-  --color-accent-glow-strong: rgba(255, 31, 90, 0.3);
+  --color-accent-hover: #c91540;
+  --color-accent-glow: rgba(229, 26, 75, 0.15);
+  --color-accent-glow-strong: rgba(229, 26, 75, 0.3);
+  
+  --color-blue-glow: rgba(2, 106, 167, 0.2);
+  --color-gold-glow: rgba(250, 204, 21, 0.15);
+  --color-lime-glow: rgba(163, 230, 53, 0.15);
+
   --color-text-primary: #FFFFFF;
   --color-text-secondary: #B8B8B8;
   --color-text-muted: #888888;
@@ -141,7 +152,12 @@ body {
    TYPOGRAPHY UTILITIES
    ======================================== */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.1;
@@ -153,30 +169,67 @@ h1, h2, h3, h4, h5, h6 {
    ======================================== */
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
+
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
 }
 
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 @keyframes rotate-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes particle-drift {
-  0% { transform: translate(0, 0); opacity: 0; }
-  20% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { transform: translate(var(--drift-x, 50px), var(--drift-y, -100px)); opacity: 0; }
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(var(--drift-x, 50px), var(--drift-y, -100px));
+    opacity: 0;
+  }
 }
 
 /* ========================================

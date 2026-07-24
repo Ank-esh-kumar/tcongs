@@ -24,8 +24,16 @@ export function ServiceGrid() {
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
         >
-          {serviceCategories.map((cat) => {
+          {serviceCategories.map((cat, index) => {
             const Icon = cat.icon;
+            const colors = [
+              { text: 'text-accent/70', hoverText: 'group-hover:text-accent', borderHover: 'group-hover:border-accent/20', glow: 'from-accent/5', blob: 'bg-accent/5', line: 'via-accent/20' },
+              { text: 'text-blue/70', hoverText: 'group-hover:text-blue', borderHover: 'group-hover:border-blue/20', glow: 'from-blue/5', blob: 'bg-blue/5', line: 'via-blue/20' },
+              { text: 'text-lime/70', hoverText: 'group-hover:text-lime', borderHover: 'group-hover:border-lime/20', glow: 'from-lime/5', blob: 'bg-lime/5', line: 'via-lime/20' },
+              { text: 'text-gold/70', hoverText: 'group-hover:text-gold', borderHover: 'group-hover:border-gold/20', glow: 'from-gold/5', blob: 'bg-gold/5', line: 'via-gold/20' },
+            ];
+            const color = colors[index % colors.length];
+
             return (
               <motion.a
                 key={cat.id}
@@ -37,20 +45,20 @@ export function ServiceGrid() {
               >
                 {/* Hover glow */}
                 <div className="absolute inset-0 rounded-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent" />
-                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-accent/5 rounded-full blur-3xl" />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${color.glow} via-transparent to-transparent`} />
+                  <div className={`absolute -top-20 -right-20 w-40 h-40 ${color.blob} rounded-full blur-3xl`} />
                 </div>
 
                 {/* Badge */}
-                <span className="inline-block text-[10px] font-semibold tracking-[0.2em] uppercase text-accent/70 mb-4">
+                <span className={`inline-block text-[10px] font-semibold tracking-[0.2em] uppercase ${color.text} mb-4`}>
                   {cat.badge}
                 </span>
 
                 {/* Icon */}
-                <div className="w-14 h-14 rounded-2xl bg-bg-secondary border border-border flex items-center justify-center mb-5 group-hover:border-accent/20 group-hover:shadow-glow transition-all duration-500">
+                <div className={`w-14 h-14 rounded-2xl bg-bg-secondary border border-border flex items-center justify-center mb-5 ${color.borderHover} group-hover:shadow-glow transition-all duration-500`}>
                   <Icon
                     size={24}
-                    className="text-text-muted group-hover:text-accent transition-all duration-500 group-hover:scale-110 group-hover:rotate-3"
+                    className={`text-text-muted ${color.hoverText} transition-all duration-500 group-hover:scale-110 group-hover:rotate-3`}
                   />
                 </div>
 
@@ -59,7 +67,7 @@ export function ServiceGrid() {
                   {cat.label}
                   <ArrowUpRight
                     size={16}
-                    className="opacity-0 group-hover:opacity-100 text-accent transition-all duration-300 -translate-x-2 group-hover:translate-x-0"
+                    className={`opacity-0 group-hover:opacity-100 ${color.hoverText} transition-all duration-300 -translate-x-2 group-hover:translate-x-0`}
                   />
                 </h3>
 
@@ -69,7 +77,7 @@ export function ServiceGrid() {
                 </p>
 
                 {/* Bottom accent line */}
-                <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className={`absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent ${color.line} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               </motion.a>
             );
           })}

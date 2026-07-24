@@ -5,10 +5,10 @@ import { Button } from '../ui/Button';
 import { fadeUp, staggerContainer } from '../../lib/animations';
 
 const trustIcons = [
-  { icon: Monitor, color: '#4A9EFF' },
-  { icon: Hexagon, color: '#A259FF' },
-  { icon: Headphones, color: '#34D399' },
-  { icon: Leaf, color: '#FBBF24' },
+  { icon: Monitor, color: 'var(--color-blue)' },
+  { icon: Hexagon, color: 'var(--color-accent)' },
+  { icon: Headphones, color: 'var(--color-lime)' },
+  { icon: Leaf, color: 'var(--color-gold)' },
 ];
 
 function Particles() {
@@ -64,17 +64,17 @@ export function Hero() {
         {/* Abstract sphere / blob */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px]">
           <div
-            className="absolute inset-0 rounded-full opacity-20"
+            className="absolute inset-0 rounded-full opacity-25"
             style={{
               background:
-                'radial-gradient(circle at 40% 40%, rgba(255,31,90,0.15) 0%, rgba(255,31,90,0.05) 40%, transparent 70%)',
+                'radial-gradient(circle at 40% 40%, var(--color-accent-glow-strong) 0%, var(--color-accent-glow) 40%, transparent 70%)',
             }}
           />
           <div
-            className="absolute inset-8 rounded-full opacity-30"
+            className="absolute inset-8 rounded-full opacity-35"
             style={{
               background:
-                'radial-gradient(circle at 60% 60%, rgba(100,100,120,0.3) 0%, rgba(50,50,60,0.2) 50%, transparent 80%)',
+                'radial-gradient(circle at 60% 60%, var(--color-blue-glow) 0%, rgba(2,106,167,0.1) 50%, transparent 80%)',
               filter: 'blur(40px)',
             }}
           />
@@ -82,7 +82,7 @@ export function Hero() {
             className="absolute inset-16 rounded-full opacity-40 animate-[rotate-slow_60s_linear_infinite]"
             style={{
               background:
-                'radial-gradient(ellipse at 30% 70%, rgba(80,80,100,0.3) 0%, transparent 60%)',
+                'radial-gradient(ellipse at 30% 70%, var(--color-gold-glow) 0%, transparent 60%)',
               filter: 'blur(30px)',
             }}
           />
@@ -96,7 +96,7 @@ export function Hero() {
             top: `${mousePos.y}%`,
             transform: 'translate(-50%, -50%)',
             background:
-              'radial-gradient(circle, rgba(255,31,90,0.06) 0%, transparent 70%)',
+              'radial-gradient(circle, var(--color-blue-glow) 0%, transparent 70%)',
           }}
         />
 
