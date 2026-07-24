@@ -27,12 +27,12 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
     >
       {/* Header */}
       <div className="flex items-center justify-between p-6 border-b border-border">
-        <a href="#" className="flex items-center gap-2" onClick={onClose}>
-          <div className="relative w-8 h-8 flex items-center justify-center">
-            <div className="absolute inset-0 bg-gradient-to-br from-accent to-orange-400 rounded-lg rotate-6" />
-            <span className="relative text-white font-heading font-bold text-base">t</span>
-          </div>
-          <span className="font-heading font-bold text-lg text-white">TCONGS</span>
+        <a href="#" className="flex items-center group" onClick={onClose}>
+          <img 
+            src="https://tcongsinfotech.com/frontend-assets/images/svgs/logo.svg" 
+            alt="TCongs Infotech" 
+            className="h-[36px] w-auto transition-transform duration-300 group-hover:scale-105" 
+          />
         </a>
         <button
           onClick={onClose}

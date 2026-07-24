@@ -44,19 +44,12 @@ export function Footer() {
           {/* Brand */}
           <motion.div variants={fadeUp} className="sm:col-span-2 lg:col-span-1">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-2 mb-6 group">
-              <div className="relative w-9 h-9 flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent to-orange-400 rounded-lg rotate-6 group-hover:rotate-12 transition-transform duration-300" />
-                <span className="relative text-white font-heading font-bold text-lg">t</span>
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="font-heading font-bold text-lg text-white tracking-tight">
-                  TCONGS
-                </span>
-                <span className="text-[10px] text-text-secondary tracking-[0.15em] uppercase">
-                  Infotech
-                </span>
-              </div>
+            <a href="#" className="flex items-center group mb-6">
+              <img 
+                src="https://tcongsinfotech.com/frontend-assets/images/svgs/logo.svg" 
+                alt="TCongs Infotech" 
+                className="h-[42px] w-auto transition-transform duration-300 group-hover:scale-105" 
+              />
             </a>
             <p className="text-text-muted text-sm leading-relaxed mb-6 max-w-xs">
               Empowering global brands with 8+ years of expertise in custom web
