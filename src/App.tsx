@@ -6,6 +6,7 @@ import { ProcessTimeline } from './components/sections/ProcessTimeline';
 import { BuildScaleGrow } from './components/sections/BuildScaleGrow';
 import { FAQ } from './components/sections/FAQ';
 import { Contact } from './components/sections/Contact';
+import { Chatbot } from './components/layout/Chatbot';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <Chatbot />
     </div>
   );
 }
