@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -12,9 +12,7 @@ const contactSchema = z.object({
   email: z.string().email('Please enter a valid email'),
   phone: z.string().optional(),
   message: z.string().min(10, 'Message must be at least 10 characters'),
-  consent: z.literal(true, {
-    message: 'Please verify you are human',
-  }),
+  mathAnswer: z.string().min(1, 'Please enter the sum'),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -71,15 +69,33 @@ function FloatingInput({
 
 export function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [mathSum, setMathSum] = useState({ a: 0, b: 0 });
+
+  // Use useEffect to ensure hydration matches and randomizes on client
+  useEffect(() => {
+    setMathSum({
+      a: Math.floor(Math.random() * 10) + 1,
+      b: Math.floor(Math.random() * 10) + 1
+    });
+  }, []);
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = async (_data: ContactFormData) => {
+  const onSubmit = async (data: ContactFormData) => {
+    if (parseInt(data.mathAnswer) !== mathSum.a + mathSum.b) {
+      setError('mathAnswer', { type: 'manual', message: 'Incorrect sum. Please try again.' });
+      setMathSum({
+        a: Math.floor(Math.random() * 10) + 1,
+        b: Math.floor(Math.random() * 10) + 1
+      });
+      return;
+    }
     // Simulate submission
     await new Promise((r) => setTimeout(r, 1500));
     setIsSubmitted(true);
@@ -235,21 +251,18 @@ export function Contact() {
                 </div>
 
                 {/* Human verification */}
-                <label className="flex items-center gap-3 cursor-pointer group">
-                  <input
-                    type="checkbox"
-                    className="w-5 h-5 rounded-md border-2 border-border bg-bg-card accent-accent cursor-pointer"
-                    {...register('consent')}
-                  />
-                  <span className="text-sm text-text-secondary group-hover:text-text-primary transition-colors">
-                    Human Verification: I confirm I am not a robot
-                  </span>
-                </label>
-                {errors.consent && (
-                  <p className="text-xs text-red-400 px-1 -mt-3">
-                    {errors.consent.message}
+                <div className="p-4 rounded-lg border border-[#333] bg-white/[0.02]">
+                  <p className="text-sm font-body text-[#B8B8B8] mb-2.5">
+                    Human Verification: <span className="text-white font-medium">{mathSum.a} + {mathSum.b} = ?</span>
                   </p>
-                )}
+                  <FloatingInput
+                    label="Enter Sum*"
+                    id="math-answer"
+                    type="number"
+                    error={errors.mathAnswer?.message}
+                    {...register('mathAnswer')}
+                  />
+                </div>
 
                 {/* Submit */}
                 <Button
