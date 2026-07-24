@@ -36,53 +36,47 @@ export function Navbar() {
       >
         <div className="section-container flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group" aria-label="TCongs Infotech Home">
-            <div className="relative w-9 h-9 flex items-center justify-center">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent to-orange-400 rounded-lg rotate-6 group-hover:rotate-12 transition-transform duration-300" />
-              <span className="relative text-white font-heading font-bold text-lg">t</span>
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="font-heading font-bold text-lg text-white tracking-tight">
-                TCONGS
-              </span>
-              <span className="text-[10px] text-text-secondary tracking-[0.15em] uppercase">
-                Infotech
-              </span>
-            </div>
+          <a href="#" className="flex items-center group" aria-label="TCongs Infotech Home">
+            <img 
+              src="https://tcongsinfotech.com/frontend-assets/images/svgs/logo.svg" 
+              alt="TCongs Infotech" 
+              className="h-[42px] w-auto transition-transform duration-300 group-hover:scale-105" 
+            />
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center gap-10" aria-label="Main navigation">
             {navLinks.map((link) => (
               <div
                 key={link.label}
-                className="relative"
+                className="relative flex items-center h-full"
                 onMouseEnter={link.hasMega ? handleSolutionEnter : undefined}
                 onMouseLeave={link.hasMega ? handleSolutionLeave : undefined}
               >
                 <a
                   href={link.href}
-                  className={`relative px-5 py-2.5 text-[15px] font-medium transition-colors duration-300 flex items-center gap-1.5 rounded-full ${
+                  className={`relative text-[15px] transition-colors duration-300 flex items-center gap-1.5 ${
                     link.active
-                      ? 'text-accent'
-                      : 'text-text-secondary hover:text-white'
+                      ? 'text-accent font-medium'
+                      : 'text-white hover:text-accent font-normal'
                   }`}
                   onClick={link.hasMega ? (e) => e.preventDefault() : undefined}
                   aria-haspopup={link.hasMega ? 'true' : undefined}
                   aria-expanded={link.hasMega ? megaOpen : undefined}
                 >
-                  <span className="animated-underline">{link.label}</span>
+                  <span>{link.label}</span>
                   {link.hasMega && (
                     <motion.span
+                      className="flex h-[18px] w-[18px] items-center justify-center rounded-full bg-white/10"
                       animate={{ rotate: megaOpen ? 180 : 0 }}
                       transition={{ duration: 0.25 }}
                     >
-                      <ChevronDown size={14} />
+                      <ChevronDown size={11} className="text-white/80" strokeWidth={3} />
                     </motion.span>
                   )}
                   {link.active && (
                     <motion.span
-                      className="absolute bottom-0 left-1/2 -translate-x-1/2 w-5 h-0.5 bg-accent rounded-full"
+                      className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-accent"
                       layoutId="activeNav"
                     />
                   )}
