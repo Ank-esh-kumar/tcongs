@@ -113,11 +113,11 @@ export function Hero() {
       >
         {/* Trust Badge */}
         <motion.div
-          className="inline-flex items-center gap-4 pl-1.5 pr-4 py-1.5 rounded-full border border-border bg-[#141414] mb-10"
+          className="flex flex-col lg:flex-row items-center gap-3 lg:gap-4 p-2 lg:pl-1.5 lg:pr-4 lg:py-1.5 rounded-2xl lg:rounded-full border border-border bg-[#141414] mb-10 max-w-[95vw]"
           variants={fadeUp}
         >
           {/* Shield Icon Box */}
-          <div className="w-10 h-10 rounded-[10px] bg-accent flex items-center justify-center shrink-0">
+          <div className="w-10 h-10 rounded-[10px] bg-accent flex items-center justify-center shrink-0 hidden lg:flex">
             <img 
               src="https://tcongsinfotech.com/frontend-assets/images/svgs/sheild.svg" 
               alt="Shield" 
@@ -126,12 +126,12 @@ export function Hero() {
           </div>
           
           {/* Text */}
-          <span className="text-[15px] text-white font-body font-medium leading-tight">
+          <span className="text-[13px] lg:text-[15px] text-white font-body font-medium leading-tight text-center lg:text-left px-2 lg:px-0">
             Trusted by businesses worldwide to build scalable digital solutions
           </span>
           
           {/* Overlapping Tech Icons */}
-          <div className="flex items-center ml-2">
+          <div className="flex items-center ml-0 lg:ml-2">
             {[
               "react.svg",
               "development.svg",
