@@ -73,7 +73,7 @@ export function Chatbot() {
                 placeholder="Type your message..." 
                 className="flex-1 bg-bg-card border border-border rounded-xl px-4 py-2.5 text-sm text-white placeholder-text-muted focus:outline-none focus:border-accent/50 transition-colors"
               />
-              <button className="bg-gradient-to-r from-gold to-accent text-bg-primary font-bold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity text-sm shadow-glow">
+              <button className="bg-gradient-to-r from-[#D89B1F] to-[#EA2B4D] text-bg-primary font-bold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity text-sm shadow-glow">
                 Send
               </button>
             </div>
@@ -89,7 +89,7 @@ export function Chatbot() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsOpen(true)}
-          className="bg-gradient-to-r from-gold to-accent px-5 py-3.5 rounded-full flex items-center gap-2 shadow-lg shadow-accent/20"
+          className="bg-gradient-to-r from-[#D89B1F] to-[#EA2B4D] px-5 py-3.5 rounded-full flex items-center gap-2 shadow-lg shadow-accent/20"
           aria-label="Open chat"
         >
           <div className="w-2.5 h-2.5 bg-bg-primary rounded-full" />
