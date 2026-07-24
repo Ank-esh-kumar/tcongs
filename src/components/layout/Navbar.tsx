@@ -13,7 +13,11 @@ const navLinks = [
   { label: 'Connect', href: '#contact' },
 ];
 
-export function Navbar() {
+interface NavbarProps {
+  onLetsTalkClick?: () => void;
+}
+
+export function Navbar({ onLetsTalkClick }: NavbarProps) {
   const { isScrolled } = useScrollPosition();
   const [megaOpen, setMegaOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -88,8 +92,8 @@ export function Navbar() {
           {/* CTA Button + Mobile Toggle */}
           <div className="flex items-center gap-4">
             <div className="hidden md:block">
-              <Button variant="primary" size="sm" showArrow href="#contact">
-                Launch Your Idea 🚀
+              <Button variant="primary" size="sm" onClick={onLetsTalkClick}>
+                Let's Talk
               </Button>
             </div>
             <button
