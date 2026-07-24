@@ -93,8 +93,8 @@
    ======================================== */
 
 * {
-  margin: 0;
-  padding: 10;
+  margin: 1;
+  padding: 1;
   box-sizing: border-box;
 }
 
