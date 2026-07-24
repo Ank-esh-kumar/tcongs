@@ -93,8 +93,7 @@
    ======================================== */
 
 * {
-  margin: 1%;
-  padding: 1%;
+  margin: auto;
   box-sizing: border-box;
 }
 
