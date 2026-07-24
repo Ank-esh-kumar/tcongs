@@ -113,21 +113,42 @@ export function Hero() {
       >
         {/* Trust Badge */}
         <motion.div
-          className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-border bg-bg-card/50 backdrop-blur-sm mb-10"
+          className="inline-flex items-center gap-4 pl-1.5 pr-4 py-1.5 rounded-full border border-border bg-[#141414] mb-10"
           variants={fadeUp}
         >
-          <ShieldCheck size={16} className="text-accent" />
-          <span className="text-sm text-text-secondary font-medium">
+          {/* Shield Icon Box */}
+          <div className="w-10 h-10 rounded-[10px] bg-accent flex items-center justify-center shrink-0">
+            <img 
+              src="https://tcongsinfotech.com/frontend-assets/images/svgs/sheild.svg" 
+              alt="Shield" 
+              className="w-5 h-5 brightness-0" 
+            />
+          </div>
+          
+          {/* Text */}
+          <span className="text-[15px] text-white font-body font-medium leading-tight">
             Trusted by businesses worldwide to build scalable digital solutions
           </span>
-          <div className="flex items-center gap-1.5 ml-2">
-            {trustIcons.map(({ icon: Icon, color }, i) => (
+          
+          {/* Overlapping Tech Icons */}
+          <div className="flex items-center ml-2">
+            {[
+              "react.svg",
+              "development.svg",
+              "figma.svg",
+              "branding.svg",
+              "chip-ai-svgrepo-com.svg"
+            ].map((icon, i) => (
               <div
-                key={i}
-                className="w-6 h-6 rounded-full flex items-center justify-center"
-                style={{ backgroundColor: `${color}20` }}
+                key={icon}
+                className={`w-[34px] h-[34px] rounded-full bg-[#262626] border border-[#333] flex items-center justify-center relative z-[${5-i}] ${i > 0 ? '-ml-[14px]' : ''}`}
+                style={{ zIndex: 10 - i }}
               >
-                <Icon size={12} style={{ color }} />
+                <img 
+                  src={`https://tcongsinfotech.com/frontend-assets/images/svgs/${icon}`} 
+                  alt={icon.replace('.svg', '')} 
+                  className={`w-4 h-4 object-contain ${i === 2 ? 'w-[18px]' : ''} ${i === 4 ? 'w-[18px]' : ''}`} 
+                />
               </div>
             ))}
           </div>
