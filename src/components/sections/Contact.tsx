@@ -102,7 +102,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 md:py-32" aria-label="Contact">
+    <section id="contact" className="relative py-28 md:py-40" aria-label="Contact">
       <div className="absolute inset-0 bg-gradient-to-b from-bg-primary to-bg-secondary" />
       {/* Accent glow */}
       <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-accent/[0.03] rounded-full blur-[100px]" />

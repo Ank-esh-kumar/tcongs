@@ -5,7 +5,7 @@ import { fadeUp, staggerContainer } from '../../lib/animations';
 
 export function BuildScaleGrow() {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden" aria-label="Build Scale Grow">
+    <section className="relative py-28 md:py-40 overflow-hidden" aria-label="Build Scale Grow">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-bg-secondary via-bg-primary to-bg-secondary" />
 
@@ -85,7 +85,7 @@ export function BuildScaleGrow() {
                       ease: 'easeInOut',
                     }}
                   >
-                    <div className="flex items-center gap-2 px-4 py-2.5 rounded-2xl border border-border bg-bg-card/80 backdrop-blur-sm shadow-card">
+                    <div className="flex items-center gap-3 px-5 py-3 rounded-2xl border border-border bg-bg-card/80 backdrop-blur-sm shadow-card">
                       <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center">
                         <Icon size={14} className="text-accent" />
                       </div>

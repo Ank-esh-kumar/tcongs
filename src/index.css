@@ -6,6 +6,7 @@
    ======================================== */
 
 @theme {
+  --spacing: 0.25rem;
   /* Logo Colors */
   --color-accent: #E51A4B;
   /* Red/Pink from logo */
@@ -241,6 +242,24 @@ h6 {
    UTILITY CLASSES
    ======================================== */
 
+.btn-sm {
+  box-sizing: border-box !important;
+  line-height: 1 !important;
+  padding: 12px 24px !important;
+}
+
+.btn-md {
+  box-sizing: border-box !important;
+  line-height: 1 !important;
+  padding: 16px 32px !important;
+}
+
+.btn-lg {
+  box-sizing: border-box !important;
+  line-height: 1 !important;
+  padding: 20px 40px !important;
+}
+
 .glass {
   background: var(--color-glass);
   backdrop-filter: blur(12px);
@@ -275,12 +294,18 @@ h6 {
 .section-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 var(--space-6);
+  padding: 0 var(--space-8);
+}
+
+@media (max-width: 1024px) {
+  .section-container {
+    padding: 0 var(--space-6);
+  }
 }
 
 @media (max-width: 768px) {
   .section-container {
-    padding: 0 var(--space-3);
+    padding: 0 var(--space-4);
   }
 }
 

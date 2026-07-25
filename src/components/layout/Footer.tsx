@@ -29,13 +29,13 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative pt-20 pb-8 bg-bg-secondary border-t border-border" aria-label="Footer">
+    <footer className="relative pt-24 pb-10 bg-bg-secondary border-t border-border" aria-label="Footer">
       {/* Top accent line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-60 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
 
       <div className="section-container">
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-12"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"

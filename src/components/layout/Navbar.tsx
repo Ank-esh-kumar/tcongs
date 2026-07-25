@@ -59,7 +59,7 @@ export function Navbar({ onLetsTalkClick }: NavbarProps) {
               >
                 <a
                   href={link.href}
-                  className={`relative text-[15px] transition-colors duration-300 flex items-center gap-1.5 ${
+                  className={`relative text-[15px] transition-colors duration-300 flex items-center gap-1.5 py-4 ${
                     link.active
                       ? 'text-accent font-medium'
                       : 'text-white hover:text-accent font-normal'

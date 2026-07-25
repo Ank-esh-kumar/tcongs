@@ -6,7 +6,7 @@ import { fadeUp, staggerContainer } from '../../lib/animations';
 
 export function ServiceGrid() {
   return (
-    <section id="services" className="relative py-24 md:py-32" aria-label="Our Services">
+    <section id="services" className="relative py-28 md:py-40" aria-label="Our Services">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-secondary to-bg-primary" />
 
@@ -18,7 +18,7 @@ export function ServiceGrid() {
 
         {/* Service Cards Grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mt-20"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -38,7 +38,7 @@ export function ServiceGrid() {
               <motion.a
                 key={cat.id}
                 href={`#${cat.id}`}
-                className="group relative p-8 rounded-[20px] border border-border bg-bg-card/60 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-border-hover hover:bg-bg-card block"
+                className="group relative p-6 sm:p-8 rounded-3xl border border-border bg-bg-card/60 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-border-hover hover:bg-bg-card block"
                 variants={fadeUp}
                 whileHover={{ y: -6, scale: 1.01 }}
                 transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}

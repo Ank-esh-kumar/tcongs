@@ -77,7 +77,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative py-24 md:py-32" aria-label="FAQ">
+    <section className="relative py-28 md:py-40" aria-label="FAQ">
       <div className="absolute inset-0 bg-bg-primary" />
 
       <div className="relative z-10 section-container">

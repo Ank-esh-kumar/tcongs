@@ -56,9 +56,9 @@ export function Button({
   };
 
   const sizes = {
-    sm: 'px-5 py-2.5 text-sm rounded-[999px]',
-    md: 'px-7 py-3.5 text-base rounded-[999px]',
-    lg: 'px-9 py-4 text-lg rounded-[999px]',
+    sm: 'btn-sm text-sm rounded-full',
+    md: 'btn-md text-base rounded-full',
+    lg: 'btn-lg text-lg rounded-full',
   };
 
   const content = (

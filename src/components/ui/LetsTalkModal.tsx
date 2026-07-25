@@ -184,7 +184,7 @@ export function LetsTalkModal({ isOpen, onClose }: LetsTalkModalProps) {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-[#D89B1F] to-[#EA2B4D] text-[#111] font-bold text-[16px] py-3.5 rounded-xl hover:opacity-90 transition-opacity mt-2 flex justify-center items-center gap-2"
+                    className="w-full bg-gradient-to-r from-[#D89B1F] to-[#EA2B4D] text-[#111] font-bold text-[16px] btn-md rounded-xl hover:opacity-90 transition-opacity mt-2 flex justify-center items-center gap-2"
                   >
                     {isSubmitting ? (
                       <><Loader2 size={18} className="animate-spin" /> Submitting...</>

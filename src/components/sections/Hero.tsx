@@ -45,7 +45,7 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-24"
       aria-label="Hero"
     >
       {/* Background effects */}
@@ -160,7 +160,7 @@ export function Hero() {
 
         {/* Subtitle */}
         <motion.p
-          className="mt-8 text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed"
+          className="mt-12 text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed"
           variants={fadeUp}
         >
           We Help Brands Grow With{' '}
@@ -169,7 +169,7 @@ export function Hero() {
         </motion.p>
 
         {/* CTA Buttons */}
-        <motion.div className="flex flex-wrap items-center justify-center gap-4 mt-12" variants={fadeUp}>
+        <motion.div className="flex flex-wrap items-center justify-center gap-6 mt-12" variants={fadeUp}>
           <Button
             variant="primary"
             size="lg"

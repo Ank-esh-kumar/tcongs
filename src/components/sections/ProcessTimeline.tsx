@@ -96,7 +96,7 @@ function TimelineStep({
 
           {/* Decorative card */}
           <motion.div
-            className="mt-6 p-6 rounded-2xl border border-border bg-bg-card/40 backdrop-blur-sm max-w-md hover:border-border-hover transition-colors"
+            className="mt-8 p-6 sm:p-8 rounded-3xl border border-border bg-bg-card/40 backdrop-blur-sm max-w-md hover:border-border-hover transition-colors"
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
@@ -119,7 +119,7 @@ function TimelineStep({
 
 export function ProcessTimeline() {
   return (
-    <section className="relative py-24 md:py-32" aria-label="Our Process">
+    <section className="relative py-28 md:py-40" aria-label="Our Process">
       {/* Background */}
       <div className="absolute inset-0 bg-bg-primary" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/[0.02] rounded-full blur-3xl" />
@@ -132,7 +132,7 @@ export function ProcessTimeline() {
 
         {/* Timeline */}
         <motion.div
-          className="mt-20 max-w-3xl mx-auto"
+          className="mt-24 max-w-3xl mx-auto"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
